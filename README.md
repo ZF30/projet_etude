@@ -15,3 +15,5 @@ dnspython
 python-nmap
 reportlab
 paramiko
+
+Vous devez lancer le script en utilisant sudo.
