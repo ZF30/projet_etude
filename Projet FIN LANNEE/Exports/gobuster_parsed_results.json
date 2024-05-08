@@ -1,0 +1,117 @@
+[
+    {
+        "path": "/.hta",
+        "status_code": "403",
+        "link": null
+    },
+    {
+        "path": "/.htpasswd",
+        "status_code": "403",
+        "link": null
+    },
+    {
+        "path": "/.htaccess",
+        "status_code": "403",
+        "link": null
+    },
+    {
+        "path": "/api",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/assets",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/blog",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/board",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/docs",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/emailing",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/emails",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/favicon.ico",
+        "status_code": "200",
+        "link": null
+    },
+    {
+        "path": "/fonts",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/images",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/include",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/index.php",
+        "status_code": "200",
+        "link": null
+    },
+    {
+        "path": "/modules",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/news",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/robots.txt",
+        "status_code": "200",
+        "link": null
+    },
+    {
+        "path": "/server-status",
+        "status_code": "403",
+        "link": null
+    },
+    {
+        "path": "/student",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/support",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/upload",
+        "status_code": "301",
+        "link": null
+    },
+    {
+        "path": "/user",
+        "status_code": "301",
+        "link": null
+    }
+]
