@@ -1,19 +1,24 @@
-Bonjour, il y a quelques problèmes avec l'installation des paquets et des modules via le script.
+ienvenue sur l'outil de test de pénétration de cybersécurité Recon-NG.
 
-Je vais donc lister le nom de chaque paquet et bibliothèque utilisés afin que vous puissiez les installer manuellement.
+Pour l'instant, la version 1.0 se concentre sur la première étape de la chaîne d'exécution, la reconnaissance.
 
-Pour les paquets à installer avec apt :
-hydra
+Avec des aspects futurs développés pour tirer profit des résultats trouvés en utilisant des charges utiles ou des exploits.
+
+Le toolkit devrait installer toutes les bibliothèques ou paquets nécessaires, mais dans le cas où ce ne serait pas le cas, je vais les lister afin que vous puissiez les installer manuellement.
+
+Paquets :
 pip
+hydra
 nmap
-enum4linux
-gobuster 
+gobuster
 nikto
+enum4linux
 
-Les bibliothèques python :
+Bibliothèques :
+paramiko
+reportlab
 dnspython
 python-nmap
-reportlab
-paramiko
 
-Vous devez lancer le script en utilisant sudo.
+Il est conseillé de lancer l'outil en utilisant sudo, en utilisant la commande suivante
+sudo python main.py
