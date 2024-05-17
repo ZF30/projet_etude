@@ -1,10 +1,10 @@
-ienvenue sur l'outil de test de pénétration de cybersécurité Recon-NG.
+Bienvenue sur l'outil de test de pénétration de cybersécurité Recon-NG.
 
-Pour l'instant, la version 1.0 se concentre sur la première étape de la chaîne d'exécution, la reconnaissance.
+Version 1.0
+La version 1.0 de Recon-NG se concentre sur la première étape de la chaîne d'exécution : la reconnaissance. Des fonctionnalités futures seront développées pour tirer profit des résultats trouvés en utilisant des charges utiles ou des exploits.
 
-Avec des aspects futurs développés pour tirer profit des résultats trouvés en utilisant des charges utiles ou des exploits.
-
-Le toolkit devrait installer toutes les bibliothèques ou paquets nécessaires, mais dans le cas où ce ne serait pas le cas, je vais les lister afin que vous puissiez les installer manuellement.
+Installation des dépendances
+Le toolkit devrait installer automatiquement toutes les bibliothèques et paquets nécessaires. Cependant, dans le cas où cela ne fonctionnerait pas, voici la liste des dépendances que vous pouvez installer manuellement :
 
 Paquets :
 pip
@@ -20,23 +20,59 @@ reportlab
 dnspython
 python-nmap
 
-Il est conseillé de lancer l'outil en utilisant sudo, en utilisant la commande suivante
+Licences
+Veuillez noter que chaque bibliothèque et paquet utilisé dans cet outil est soumis à sa propre licence. Voici un résumé des licences associées aux principales dépendances :
+
+pip : MIT License
+hydra : AGPL-3.0
+nmap : Nmap Public Source License (NPSL)
+gobuster : Apache License 2.0
+nikto : GPL-2.0
+enum4linux : GPL-3.0
+paramiko : LGPL-2.1
+reportlab : BSD License
+dnspython : Apache License 2.0
+python-nmap : GPL-3.0
+Il est de votre responsabilité de vous assurer que vous respectez les termes de ces licences lors de l'utilisation de Recon-NG.
+
+Utilisation de l'outil
+Il est conseillé de lancer l'outil avec des privilèges administratifs en utilisant la commande suivante :
 sudo python main.py
 
-La première fonction du premier menu propose deux options pour l'énumération des DNS/réseaux.
+Fonctionnalités
+  Menu principal
+La première fonction du menu principal propose deux options pour l'énumération des DNS/réseaux.
+ DNS Footprinting :
+    Utilise la bibliothèque dnspython pour effectuer une requête DNS sur le domaine indiqué par l'utilisateur.
+Renvoie tous les enregistrements de type : TXT, A, AAAA, MX, CNAME, SOA, NS.
+Analyse du réseau :
+    Utilise le module python-nmap pour scanner une adresse IP saisie par l'utilisateur.
 
-L'empreinte DNS est réalisée à l'aide de la bibliothèque dnspython qui fait appel au module resolver, qui effectue une requête DNS sur le domaine indiqué par l'utilisateur et renvoie tous les enregistrements du type : TXT, A ,AAAA ,MX ,CNAME ,SOA ,NS.
+Tests d'application web
+Pour les tests de l'application web, nous avons trois outils principaux :
+Gobuster :
+    Prend une URL (ex : https://www.example.org/) et liste tous les répertoires trouvés à partir de cette URL.
+Toutes les URL doivent être écrites dans ce format.
+Nikto :
+    Analyse les vulnérabilités pour une URL spécifique dans le même format que précédemment.
+Scan analytique :
+    Parcourt le code source d'une application web donnée à la recherche de variables ou de mots-clés tels que password, user, username, apikey, secret pour détecter des informations confidentielles.
 
-Pour l'analyse du réseau, la boîte à outils utilise le module python-nmap qui prend une adresse IP saisie par l'utilisateur.
+Tests machine
+    Énumération des utilisateurs :
+      Effectue une énumération des utilisateurs avant de procéder au test SSH Bruteforce.
+    Test SSH Bruteforce :
+      Si une connexion réussie est notée, une analyse du mot de passe est effectuée pour évaluer sa complexité.
+    Analyse des vulnérabilités :
+      Utilise nmap avec le paramètre --script vulners pour cibler toutes les CVE avec un score de 5.0 ou plus.
+    
+Rapport
+Une fois toutes les étapes terminées, revenez au menu de démarrage pour générer le rapport.
 
-Pour les tests de l'application web, nous avons trois tests :
+Merci d'utiliser Recon-NG pour vos tests de pénétration de cybersécurité. Assurez-vous de respecter les lois et les règles en vigueur lors de l'utilisation de cet outil.
 
-Gobuster qui prend une URL ex(https://www.example.org/) et liste ensuite tous les répertoires trouvés à partir de cette URL. Toutes les URL doivent être écrites dans ce format.
 
-Ensuite, Nikto est utilisé pour analyser les vulnérabilités trouvées pour une URL spécifique dans le même format que précédemment.
 
-Enfin, le scan analytique parcourt le code source d'une application web donnée et recherche des variables ou des mots-clés tels ques password, user, username, apikey, secret, pour voir s'il y a des informations confidentielles dans le code source.
 
-Pour le dernier menu, les tests machine, il est nécessaire d'effectuer d'abord l'énumération des utilisateurs avant d'effectuer le test SSH Brutefore, si une connexion réussie est notée, il effectue ensuite une analyse du mot de passe pour juger de la complexité de celui-ci. Pour finir, l'analyse des vulnérabilités se fait en utilisant nmap avec le paramètre --script vulners en ciblant toutes les CVE avec un score de 5.0 ou plus.
 
-Une fois tout cela terminé, retournez au menu de démarrage pour générer le rapport.
+
